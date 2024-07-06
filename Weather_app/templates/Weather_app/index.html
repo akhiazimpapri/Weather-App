@@ -1,0 +1,42 @@
+{% extends "Main.html" %}
+<!--  -->
+{% block content %}
+
+<div class="wrapper">
+  <div class="widget-container">
+    <div class="top-left">
+      <h1 class="city" id="city">{{city}}</h1>
+      <h2 id="day">{{day}}</h2>
+      <h3 id="date">{{month}}, {{date}} {{year}}</h3>
+      <p class="geo"></p>
+    </div>
+    <div class="top-right">
+      <h1 id="weather-status">Weather / Weather Status</h1>
+      <img
+        class="weather-icon"
+        src="http://openweathermap.org/img/w/{{ icon }}.png"
+      />
+    </div>
+    <div class="horizontal-half-divider"></div>
+    <div class="bottom-left">
+      <h1 id="temperature">{{temp}}</h1>
+      <h2 id="celsius">&degC</h2>
+    </div>
+    <div class="vertical-half-divider"></div>
+    <div class="bottom-right">
+      <div class="other-details-key">
+        <p>Feels like</p>
+        
+        <p>Minimum</p>
+        <p>Maximum</p>
+      </div>
+      <div class="other-details-values">
+        <p class="windspeed">{{feels_like}} &degC</p>
+        
+        <p class="sunrise-time">{{minimum}} ºC</p>
+        <p class="sunset-time">{{maximum}} ºC</p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}

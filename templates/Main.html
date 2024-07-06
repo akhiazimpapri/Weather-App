@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'styles/style.css' %}" />
+    <title>Weather</title>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div></div>
+      <form class="search-bar" action='{% url "home" %}' method="POST">
+        {% csrf_token %}
+        <input type="text" name="city" placeholder="Enter City" />
+        <button type="submit" class="btn">Search</button>
+      </form>
+      <ul class="items">
+      </ul>
+    </nav>
+    {% block content %}
+    <!-- -->
+    {% endblock content %}
+  </body>
+</html>
